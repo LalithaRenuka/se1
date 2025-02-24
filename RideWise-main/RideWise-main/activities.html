@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities</title>
+    <link rel="stylesheet" href="vehicle.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo-title">
+            <img src="R.png" alt="Logo"> 
+            <h1>Ride Cost Comparison</h1>
+        </div>
+        <nav> 
+            <a href="index.html">Home</a>
+            <a href="vehicle_cost.html">Ride Cost Comparison</a>
+            <a href="activities.html">Activities</a>
+            <a href="sign_up.html">Sign Up</a>
+            <a href="sign_in.html">Sign In</a>
+        </nav>
+    </header>
+    
+
+    <!-- Main Content -->
+    <main>
+        <h2>Recent Activities</h2>
+        <p>Track all activities performed on the platform.</p>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search activities...">
+            <button onclick="searchActivities()">Search</button>
+        </div>
+
+        <!-- Activity List -->
+        <section class="activities-list">
+            <div class="activity-card">
+                <h3>Ride Comparison</h3>
+                <p>You compared costs between Uber and Lyft.</p>
+                <span>Feb 24, 2025 - 10:30 AM</span>
+            </div>
+
+            <div class="activity-card">
+                <h3>Booking Confirmation</h3>
+                <p>You booked a ride from Downtown to Airport.</p>
+                <span>Feb 23, 2025 - 8:15 PM</span>
+            </div>
+
+            <div class="activity-card">
+                <h3>Profile Updated</h3>
+                <p>You updated your profile picture and payment details.</p>
+                <span>Feb 20, 2025 - 3:45 PM</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating CTA Button -->
+    <a href="new-activity.html" class="cta-button">+ Add Activity</a>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Ride Cost Comparison | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function searchActivities() {
+            let searchValue = document.getElementById("search").value.toLowerCase();
+            let activities = document.querySelectorAll(".activity-card");
+
+            activities.forEach(activity => {
+                let text = activity.innerText.toLowerCase();
+                activity.style.display = text.includes(searchValue) ? "block" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>
